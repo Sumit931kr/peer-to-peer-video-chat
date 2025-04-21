@@ -13,7 +13,9 @@ const Homepage = () => {
 
     const handleJoinRoom = (e) => {
         e.preventDefault()
+        // console.log("join-room with email: "+email + " roomId: "+roomId + " at" + new Date().toLocaleTimeString() + ' ' + new Date().getMilliseconds())
         socket.emit('join-room', {emailId:email, roomId: roomId})
+
     }
 
     const handleRoomJoined = useCallback(({roomId}) => {
